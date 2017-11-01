@@ -51,18 +51,22 @@ p {
   border-bottom: solid 5px white;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  padding-bottom: 10px;
 }
 
 .header h1 {
 	font-family: 'Oswald', sans-serif;
 	margin-bottom: 0;
-	padding-bottom: 3px;
+	padding-bottom: 2px;
+	text-shadow: 3px 3px #000;
 }
 
 #header-logo {
 	margin-top: 25px;
 	width: 65%;
 	padding: 0 auto;
+	-webkit-filter: drop-shadow(5px 5px 5px #000);
+  	filter: drop-shadow(5px 5px 5px #000);
 }
 
 .stats-bar {
@@ -92,10 +96,16 @@ p {
 
 #question {
 	background: blue;
+	border: solid 3px white;
 	border-radius: 15px;
 	width: 50%;
 	padding: 10px;
 	font-size: 2em;
+	font-family: serif;
+	text-shadow: 2px 2px #000;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.3em;
 	margin: 20px auto;
 }
 
@@ -105,6 +115,7 @@ p {
   max-width: 50%;
   text-align: center;
   font-size: 1.5em;
+  text-shadow: 2px 2px #000;
 }
 
 #response-buttons li {
@@ -113,12 +124,14 @@ p {
   margin-top: 5px;
   border: solid 2px white;
   border-radius: 15px;
+  background: blue;
 }
 
 #response-buttons li:hover {
   background: #FEE77B;
   border: ;
   color: blue;
+  text-shadow: 2px 2px #fff;
   
 }
 
