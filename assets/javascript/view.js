@@ -26,29 +26,35 @@ let view = {
 		var statsHtml = 
 			"<ul>" +
 				"<li><p>Player: " + playerName + "</p></li>" +
-				"<li><p>Score: " + score + "</p></li>" +
+				"<li><p>Score: $" + score + "</p></li>" +
 			"</ul>";
 		$('.stats-bar').html(statsHtml);
 		
 	},
 
 	displayQuestion: () => {
-		for (var i = 0; i < questionsArray.length; i++) {
-			question = questionsArray[i].question;
-			value = questionsArray[i].value;
-			correct = questionsArray[i].correct;
+		// Randomly choose question from questionsArray
+		choosenQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
+		question = choosenQuestion.question;
+		responses = choosenQuestion.responses;
+		value = choosenQuestion.value;
+		correct = choosenQuestion.correct;
+		// for (var i = 0; i < questionsArray.length; i++) {
+		// 	question = questionsArray[i].question;
+		// 	value = questionsArray[i].value;
+		// 	correct = questionsArray[i].correct;
 			$('#question').text(question);
 			$('#question-value').text(value);
-		for (var j = 2; j < questionsArray[i].responses.length; j++) {
+		for (var j = 0; j < responses.length; j++) {
 			responseButtons = document.getElementById('response-buttons');
 			responsesChoices = document.createElement('ul');
 			responsesChoices.id = 'responsesChoices';
 			response = document.createElement('li');
 			response.id = 'response';
-			response.innerHTML = questionsArray[i].responses[j];
+			response.innerHTML = responses[j];
 			responseButtons.appendChild(responsesChoices);
 			responsesChoices.appendChild(response);
-		}
+		//}
 
 		}
 		

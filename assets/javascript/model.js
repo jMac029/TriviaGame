@@ -33,5 +33,16 @@ var questionsArray = [
 		correct: "Who is Tim Berners-Lee?",
 		value: 200
 	},
+	{
+		question: "The Year when HTML5 was Officially Released.",
+		responses: [
+					"What is 2005?",
+					"What is 1999?",
+					"What is 2011?",
+					"What is 2014?"
+					],
+		correct: "What is 2014",
+		value: 300
+	},
 
 ];
