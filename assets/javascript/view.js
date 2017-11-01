@@ -38,13 +38,15 @@ let view = {
 		question = choosenQuestion.question;
 		responses = choosenQuestion.responses;
 		value = choosenQuestion.value;
+		category = choosenQuestion.category;
 		correct = choosenQuestion.correct;
 		// for (var i = 0; i < questionsArray.length; i++) {
 		// 	question = questionsArray[i].question;
 		// 	value = questionsArray[i].value;
 		// 	correct = questionsArray[i].correct;
+			$('#category').text(category);
 			$('#question').text(question);
-			$('#question-value').text(value);
+			$('#question-value').text("$ "+value);
 		for (var j = 0; j < responses.length; j++) {
 			responseButtons = document.getElementById('response-buttons');
 			responsesChoices = document.createElement('ul');

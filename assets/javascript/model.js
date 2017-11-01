@@ -20,6 +20,7 @@ var questionsArray = [
 				   "Who is Harrison Toad Mary Louie?"
 				   ],
 		correct: "What is Hypertext Markup Language?",
+		category: "HTML",
 		value: 100
 	},
 	{
@@ -31,6 +32,7 @@ var questionsArray = [
 					"Who is Charles Philip Arthur George?"
 					],
 		correct: "Who is Tim Berners-Lee?",
+		category: "History of the Web",
 		value: 200
 	},
 	{
@@ -42,6 +44,7 @@ var questionsArray = [
 					"What is 2014?"
 					],
 		correct: "What is 2014",
+		category: "HTML",
 		value: 300
 	},
 
