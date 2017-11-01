@@ -1,0 +1,97 @@
+body {
+  width: 1024px;
+  margin: auto;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #777;
+  background-image: url('../images/felt.png');
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  font-family: serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  color: yellow;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Libre Baskerville', serif;
+}
+
+
+
+.wrapper {
+  height: auto !important;
+  height: 100%;
+
+  /* Box-model */
+  min-height: 100%;
+
+  /* Positioning */
+  margin: 35px auto -100px;
+  border: solid 5px white;
+}
+
+.header {
+  margin: auto;
+  background-color: blue;
+  text-align: center;
+  border-bottom: solid 5px white;
+}
+
+.header h1 {
+	font-family: 'Oswald', sans-serif;
+	margin-bottom: 0;
+	padding: 3px;
+}
+
+#header-logo {
+	margin-top: 25px;
+	width: 65%;
+	padding: 0 auto;
+}
+
+.stats {
+  margin: 25px auto;
+  text-align: center;
+  border-top: 2px solid blue;
+  width: 100%;
+}
+
+.stats li {
+  position: relative;
+  list-style: none;
+  margin: 10px;
+  padding: 0 2em;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.game-area {
+  width: 100%;
+}
+
+#values {
+	font-family: 'Bowlby One SC', cursive;
+}
+
+.clear {
+  clear: both;
+}
+
+.footer {
+  margin: 25px auto;
+  height: 100px;
+}
