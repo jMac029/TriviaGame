@@ -74,7 +74,7 @@ let view = {
 	},
 
 	dialogInCorrectNextQuestion: () => {
-		$('#dialog-incorrect-next-question').text("YOU ARE INCORRECT AND LOSS $" + value + "!")
+		$('#dialog-incorrect-next-question').text("YOU ARE INCORRECT AND LOSE $" + value + "!")
 		$( '#dialog-incorrect-next-question' ).dialog({
 		  classes: {"ui-dialog": "incorrect"},
 		  modal: true,
@@ -95,7 +95,7 @@ let view = {
 	},
 
 	dialogInCorrectNextQuestion: () => {
-		$('#dialog-times-up-next-question').text("TIME IS UP! YOU LOST $" + value + "!")
+		$('#dialog-times-up-next-question').text("TIME IS UP! YOU LOSE $" + value + "!")
 		$( '#dialog-times-up-next-question' ).dialog({
 		  classes: {"ui-dialog": "times-up"},
 		  modal: true,
