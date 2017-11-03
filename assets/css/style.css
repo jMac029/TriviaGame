@@ -139,7 +139,7 @@ p {
 	margin: 20px auto;
 }
 
-#correct {
+/*#correct {
   color: green;
 }
 
@@ -153,7 +153,7 @@ p {
 
 #incorrect :hover {
   background: red;
-}
+}*/
 
 
 #response-buttons {
@@ -183,16 +183,16 @@ p {
   
 }
 
-.next-question {
-  margin: 15px auto;
-  padding: 10px;
-  max-width: 50%;
+#timer {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 5%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 3em;
   color: white;
   text-shadow: 2px 2px #000;
   border: solid 2px white;
-  border-radius: 15px;
+  border-radius: 50px;
   background: red;
 }
 
@@ -222,6 +222,10 @@ p {
 
 .incorrect {
   background: red;
+}
+
+.times-up {
+  background: purple;
 }
 
 .ui-dialog-buttonpane {

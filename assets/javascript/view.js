@@ -46,11 +46,11 @@ let view = {
 		game.checkResponse();
 	},
 
-	// nextQuestion: () => {
-	// 	nextQuestion = $('.next-question');
-	// 	$('.game-area').append(nextQuestion);
-	// 	nextQuestion.html('<p>NEXT QUESTION</p>');
-	// }
+	displayTimer: () => {
+		$('#timer').text(timer);
+		timer = 12;
+
+	},
 
 	dialogCorrectNextQuestion: () => {
 		$('#dialog-correct-next-question').text("YOU ARE CORRECT AND EARNED $" + value + "!")
@@ -77,6 +77,27 @@ let view = {
 		$('#dialog-incorrect-next-question').text("YOU ARE INCORRECT AND LOSS $" + value + "!")
 		$( '#dialog-incorrect-next-question' ).dialog({
 		  classes: {"ui-dialog": "incorrect"},
+		  modal: true,
+		  resizable: false,
+		  position: { my: "center", at: "center"},
+		  dialogClass: "no-close",
+		  buttons: [
+		    {
+		      text: "NEXT QUESTION",
+		      click: function() {
+		        $( this ).dialog( "close" );
+		        view.clearGameArea();
+		        game.nextQuestionInRound();
+		      }
+		    }
+		  ]
+		})
+	},
+
+	dialogInCorrectNextQuestion: () => {
+		$('#dialog-times-up-next-question').text("TIME IS UP! YOU LOST $" + value + "!")
+		$( '#dialog-times-up-next-question' ).dialog({
+		  classes: {"ui-dialog": "times-up"},
 		  modal: true,
 		  resizable: false,
 		  position: { my: "center", at: "center"},
