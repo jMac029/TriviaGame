@@ -172,6 +172,7 @@ p {
   border: solid 2px white;
   border-radius: 15px;
   background: blue;
+  font-family: 'Oswald', sans-serif;
 }
 
 #response-buttons li:hover {
@@ -199,6 +200,41 @@ p {
   font-family: 'Oswald', sans-serif;
   font-size: 2em;
 }*/
+
+.ui-dialog {
+  height: auto;
+  margin: 20px auto;
+  padding: 0 20px;
+  text-align: center;
+  border: solid 2px white;
+  border-radius: 15px;
+  color: white;
+  text-shadow: 2px 2px #000;
+  font-family: serif;
+  font-size: 2em;
+  /*background: purple;*/
+  
+}
+
+.correct {
+  background: green;
+}
+
+.incorrect {
+  background: red;
+}
+
+.ui-dialog-buttonpane {
+
+}
+
+.ui-button {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  margin: 20px auto;
+  border-radius: 15px;
+  background: #fff;
+}
 
 .no-close .ui-dialog-titlebar-close {
   display: none;

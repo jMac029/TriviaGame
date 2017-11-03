@@ -46,21 +46,21 @@ let game = {
             //for (var i = 0; i < responses.length; i++) {
                 if (correct === userSelection) {
                     console.log(userSelection);
-                    $(this).attr('id', 'correct');
+                    // $(this).attr('id', 'correct');
                     score += value;
                     counter++;
                     view.updateStatBar();
                     //view.nextQuestion()
-                    view.dialogNextQuestion();
+                    view.dialogCorrectNextQuestion();
                     //view.alertNextQuestion();
                 } else if (correct !== userSelection) {
                     console.log(userSelection);
-                    $(this).attr('id', 'incorrect');
+                    // $(this).attr('id', 'incorrect');
                     score -= value;
                     counter++
                     view.updateStatBar();
                     //view.nextQuestion();
-                    view.dialogNextQuestion();
+                    view.dialogInCorrectNextQuestion();
                     //view.alertNextQuestion();
                 }
             //}

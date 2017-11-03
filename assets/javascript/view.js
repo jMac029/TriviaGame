@@ -52,13 +52,32 @@ let view = {
 	// 	nextQuestion.html('<p>NEXT QUESTION</p>');
 	// }
 
-	dialogNextQuestion: () => {
-		$( '#dialog-next-question' ).dialog({
-		  //appendTo: '#response-buttons',
-		  //autoOpen: false,
+	dialogCorrectNextQuestion: () => {
+		$('#dialog-correct-next-question').text("YOU ARE CORRECT AND EARNED $" + value + "!")
+		$( '#dialog-correct-next-question' ).dialog({
+		  classes: {"ui-dialog": "correct"},
 		  modal: true,
-		  height: 400,
-		  width: 400,
+		  resizable: false,
+		  position: { my: "center", at: "center"},
+		  dialogClass: "no-close",
+		  buttons: [
+		    {
+		      text: "NEXT QUESTION",
+		      click: function() {
+		        $( this ).dialog( "close" );
+		        view.clearGameArea();
+		        game.nextQuestionInRound();
+		      }
+		    }
+		  ]
+		})
+	},
+
+	dialogInCorrectNextQuestion: () => {
+		$('#dialog-incorrect-next-question').text("YOU ARE INCORRECT AND LOSS $" + value + "!")
+		$( '#dialog-incorrect-next-question' ).dialog({
+		  classes: {"ui-dialog": "incorrect"},
+		  modal: true,
 		  resizable: false,
 		  position: { my: "center", at: "center"},
 		  dialogClass: "no-close",
