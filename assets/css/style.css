@@ -139,6 +139,23 @@ p {
 	margin: 20px auto;
 }
 
+#correct {
+  color: green;
+}
+
+#correct :hover {
+  background: green;
+}
+
+#incorrect {
+  color: red;
+}
+
+#incorrect :hover {
+  background: red;
+}
+
+
 #response-buttons {
   margin: 15px auto;
   padding: 10px;
@@ -163,6 +180,28 @@ p {
   color: blue;
   text-shadow: 2px 2px #fff;
   
+}
+
+.next-question {
+  margin: 15px auto;
+  padding: 10px;
+  max-width: 50%;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  text-shadow: 2px 2px #000;
+  border: solid 2px white;
+  border-radius: 15px;
+  background: red;
+}
+
+/*.ui-dialog {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+}*/
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
 }
 
 .clear {

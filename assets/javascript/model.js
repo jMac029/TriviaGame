@@ -7,6 +7,8 @@ let inCorrect = 0;
 let counter;
 let timer;
 let score = 0;
+let response;
+let responses = [];
 
 
 // Array of Question Objects
@@ -43,7 +45,7 @@ var questionsArray = [
 					"What is 2011?",
 					"What is 2014?"
 					],
-		correct: "What is 2014",
+		correct: "What is 2014?",
 		category: "HTML",
 		value: 300
 	},

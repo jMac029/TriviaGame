@@ -4,9 +4,7 @@
 
 window.onload = () => {
 
-	view.updateStatBar();
-	//view.welcomeScreen();
-	view.displayQuestion();
+	game.nextQuestionInRound();
 
 };
 
@@ -33,38 +31,61 @@ let view = {
 	},
 
 	displayQuestion: () => {
-		// Randomly choose question from questionsArray
-		choosenQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
-		question = choosenQuestion.question;
-		responses = choosenQuestion.responses;
-		value = choosenQuestion.value;
-		category = choosenQuestion.category;
-		correct = choosenQuestion.correct;
-		// for (var i = 0; i < questionsArray.length; i++) {
-		// 	question = questionsArray[i].question;
-		// 	value = questionsArray[i].value;
-		// 	correct = questionsArray[i].correct;
-			$('#category').text(category);
-			$('#question').text(question);
-			$('#question-value').text("$ "+value);
+		$('#category').text(category);
+		$('#question').text(question);
+		$('#question-value').text("$ "+value);
+
+	},
+
+	displayResponses: () => {
+		responseChoices = $('.response-choices');
 		for (var j = 0; j < responses.length; j++) {
-			responseButtons = document.getElementById('response-buttons');
-			responsesChoices = document.createElement('ul');
-			responsesChoices.id = 'responsesChoices';
-			response = document.createElement('li');
-			response.id = 'response';
-			response.innerHTML = responses[j];
-			responseButtons.appendChild(responsesChoices);
-			responsesChoices.appendChild(response);
-		//}
-
+			response = $('<li>').attr('class', 'userResponse').html(responses[j]);
+			responseChoices.append(response);
 		}
-		
-		console.log(question);
-		console.log(value);
-		console.log(correct);
-		//console.log(responses);
+		game.checkResponse();
+	},
 
+	// nextQuestion: () => {
+	// 	nextQuestion = $('.next-question');
+	// 	$('.game-area').append(nextQuestion);
+	// 	nextQuestion.html('<p>NEXT QUESTION</p>');
+	// }
+
+	dialogNextQuestion: () => {
+		$( '#dialog-next-question' ).dialog({
+		  //appendTo: '#response-buttons',
+		  //autoOpen: false,
+		  modal: true,
+		  height: 400,
+		  width: 400,
+		  resizable: false,
+		  position: { my: "center", at: "center"},
+		  dialogClass: "no-close",
+		  buttons: [
+		    {
+		      text: "NEXT QUESTION",
+		      click: function() {
+		        $( this ).dialog( "close" );
+		        view.clearGameArea();
+		        game.nextQuestionInRound();
+		      }
+		    }
+		  ]
+		})
+	},
+
+	clearGameArea: function() {
+		$('#category').empty();
+		$('#question').empty();
+		$('#question-value').empty();
+		$('.response-choices').empty();
+	},
+
+	alertNextQuestion: () => {
+		alert('Next Question');
+		view.clearGameArea();
+		game.nextQuestionInRound();
 	}
 
 };
