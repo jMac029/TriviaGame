@@ -78,6 +78,7 @@ let game = {
     clearArrays: () => {
         questionsArray.push(...usedQuestions);
         usedQuestions = [];
+	responses = [];
     },
 
     pushUsedQuestion: () => {
