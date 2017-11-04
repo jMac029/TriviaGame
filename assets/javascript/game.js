@@ -41,9 +41,9 @@ let game = {
                     view.dialogInCorrectNextQuestion();
                 }
                 if (counter == 11) {
+                    view.gameOverScreen();
                     $('.ui-dialog').hide();
                     $('.game-area').hide();
-                    view.gameOverScreen();
                 }
         })
     },
