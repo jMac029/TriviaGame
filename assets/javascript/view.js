@@ -151,26 +151,26 @@ let view = {
 		if ( score > 1 ) {
 			var gameOverHtml =
 			"<h1>Congratulations " + playerName + "!<br>You Completed the Game with a score of <br>$" + score + "</h1>";
-			// "<h1>Would You like to play Again?</h1>" +
-			// "<button id='button-restart-game'>NEW GAME</button>";
+			"<h1>Would You like to play Again?</h1>" +
+			"<button id='button-restart-game'>NEW GAME</button>";
 		} else if ( score < 0 ) {
 			var gameOverHtml =
 			"<h1>I'm Sorry " + playerName + "!<br>You Finished the Game with a score of <br>$" + score + "</h1>";
-			// "<h1>You should play Again!</h1>" +
-			// "<button id='button-restart-game'>NEW GAME</button>";
+			"<h1>You should play Again!</h1>" +
+			"<button id='button-restart-game'>NEW GAME</button>";
 		}
 		$('.restart-screen').html(gameOverHtml);
-		// $('#button-restart-game').click(function() {
-		// 	$('.restart-screen').hide();
-		// 	counter = 0;
-		// 	score = 0;
-		// 	playerName = "";
-		// 	view.updateStatBar();
-		// 	game.clearArrays();
-		// 	$('.welcome-screen').show();
-		// 	view.welcomeScreen();
+		$('#button-restart-game').click(function() {
+		 	$('.restart-screen').hide();
+			counter = 0;
+		 	score = 0;
+	         	playerName = "";
+			view.updateStatBar();
+			game.clearArrays();
+			$('.welcome-screen').show();
+			view.welcomeScreen();
 
-		// });
+		 });
 
 	},
 
