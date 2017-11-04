@@ -83,11 +83,20 @@ let view = {
 		      }
 		    }
 		  ]
-		})
+		 //  open: function(event, ui){
+   				// setTimeout(function {
+   //   			$('#dialog-correct-next-question').dialog("destroy"); 
+   //   			game.pushUsedQuestion();
+		 //        view.clearGameArea();
+		 //        game.nextQuestionInRound();
+		 //        counter++;
+			// }, 5000);
+   		})
 	},
 
 	dialogInCorrectNextQuestion: () => {
-		$('#dialog-incorrect-next-question').html("<p>" + playerName + "<br>YOU ARE INCORRECT<br>LOSE<br>$" + value + "!</p>")
+		$('#dialog-incorrect-next-question').html("<p>" + playerName + "<br>YOU ARE INCORRECT<br>LOSE<br>$" + value + "!</p>" +
+													"<p> THE CORRECT ANSWER WAS:<br>" + correct + "<p>")
 		$( '#dialog-incorrect-next-question' ).dialog({
 		  classes: {"ui-dialog": "incorrect"},
 		  modal: true,
@@ -106,11 +115,20 @@ let view = {
 		      }
 		    }
 		  ]
+		//   open: function(event, ui){
+  //    		setTimeout("$('#dialog-times-up-next-question').dialog('close')",5000);
+  //    			$( this ).dialog( "close" );
+  //    			game.pushUsedQuestion();
+		//         view.clearGameArea();
+		//         game.nextQuestionInRound();
+		//         counter++;
+  //   		}
 		})
 	},
 
 	dialogTimesUpNextQuestion: () => {
-		$('#dialog-times-up-next-question').html("<p>" + playerName + "<br>TIME IS UP!<br>LOSE<br>$" + value + "!<p>")
+		$('#dialog-times-up-next-question').html("<p>" + playerName + "<br>TIME IS UP!<br>LOSE<br>$" + value + "!<p>" +
+													"<p> THE CORRECT ANSWER WAS:<br>" + correct + "<p>")
 		$( '#dialog-times-up-next-question' ).dialog({
 		  classes: {"ui-dialog": "times-up"},
 		  modal: true,
@@ -129,6 +147,14 @@ let view = {
 		      }
 		    }
 		  ]
+		//   open: function(event, ui){
+  				//  setTimeout("$('#dialog-times-up-next-question').dialog('close')",5000);
+  //    			$( this ).dialog( "close" );
+  //    			game.pushUsedQuestion();
+		//         view.clearGameArea();
+		//         game.nextQuestionInRound();
+		//         counter++;
+  //   		}
 		})
 	},
 
@@ -150,12 +176,12 @@ let view = {
 		game.timerStop();
 		if ( score > 1 ) {
 			var gameOverHtml =
-			"<h1>Congratulations " + playerName + "!<br>You Completed the Game with a score of <br>$" + score + "</h1>";
+			"<h1>Congratulations " + playerName + "!<br>You Completed the Game with a score of <br>$" + score + "</h1>" +
 			"<h1>Would You like to play Again?</h1>" +
 			"<button id='button-restart-game'>NEW GAME</button>";
-		} else if ( score < 0 ) {
+		} else if ( score <= 0 ) {
 			var gameOverHtml =
-			"<h1>I'm Sorry " + playerName + "!<br>You Finished the Game with a score of <br>$" + score + "</h1>";
+			"<h1>I'm Sorry " + playerName + "!<br>You Finished the Game with a score of <br>$" + score + "</h1>" +
 			"<h1>You should play Again!</h1>" +
 			"<button id='button-restart-game'>NEW GAME</button>";
 		}
@@ -164,7 +190,7 @@ let view = {
 		 	$('.restart-screen').hide();
 			counter = 0;
 		 	score = 0;
-	         	playerName = "";
+	        playerName = "";
 			view.updateStatBar();
 			game.clearArrays();
 			$('.welcome-screen').show();
