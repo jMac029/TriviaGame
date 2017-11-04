@@ -1,10 +1,10 @@
 // All the Data for the Game to function
 
 // Global Variables
-let playerName = "player 1";
+let playerName = "";
 let correct = 0;
 let inCorrect = 0;
-let counter;
+let counter = 0;
 let timer = 0;
 let clockRunning = false;
 let setInterval;
@@ -12,10 +12,11 @@ let intervalId;
 let score = 0;
 let response;
 let responses = [];
+let usedQuestions = [];
 
 
 // Array of Question Objects
-var questionsArray = [
+let questionsArray = [
 	{
 		question: "The standard markup language for creating web pages and web applications.",
 		responses: [
@@ -89,7 +90,7 @@ var questionsArray = [
 		value: 500
 	},
 	{
-		question: "A style sheet language used for describing the presentation of a document written in a markup language..",
+		question: "A style sheet language used for describing the presentation of a document written in a markup language.",
 		responses: [
 					"What is Extensible Markup Language(XML)?",
 					"What is Cascading Style Sheets(CSS)?",
@@ -99,6 +100,67 @@ var questionsArray = [
 		correct: "What is Cascading Style Sheets(CSS)?",
 		category: "HTML & CSS",
 		value: 100
+	},
+	{
+		question: "Alongside HTML and CSS, ________ is one of the three core technologies of World Wide Web content production.",
+		responses: [
+					"What is JavaScript?",
+					"What is Java?",
+					"What is Python?",
+					"What is Swift?"
+					],
+		correct: "What is JavaScript?",
+		category: "WWW",
+		value: 200
+	},
+	{
+		question: "The first popular graphical Web browser.",
+		responses: [
+					"What is Netscape?",
+					"What is Firefox?",
+					"What is Internet Explorer?",
+					"What is NCSA Mosaic?"
+					],
+		correct: "What is NCSA Mosaic?",
+		category: "History of the Web",
+		value: 400
+	},
+	{
+		question: "Creator of JavaScript and co-founder of the Mozilla Foundation.",
+		responses: [
+					"Who is Marc Andreessen?",
+					"Who is Brendan Eich?",
+					"Who is Douglas Crockford?",
+					"Who is Vanilla Ice?"
+					],
+		correct: "Who is Brendan Eich?",
+		category: "WWW",
+		value: 500
+	},
+	{
+		question: "Computer programs that are designed by making them out of objects that interact with one another.",
+		responses: [
+					"What is Data Driven Programming?",
+					"What is Programming?",
+					"What is Object-oriented programming?",
+					"What is Functional Programming?"
+					],
+		correct: "What is Object-oriented programming?",
+		category: "Computer Science",
+		value: 300
+	},
+	{
+		question: "A decentralized software development model that encourages open collaboration.",
+		responses: [
+					"What is Open-Source model?",
+					"What is Peer Programming?",
+					"What is Apache Hadoop?",
+					"What is Software Licensing?"
+					],
+		correct: "What is Open-Source model?",
+		category: "Computer Science",
+		value: 200
 	}
+
 
 ];

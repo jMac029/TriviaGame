@@ -12,11 +12,7 @@ let game = {
         value = choosenQuestion.value;
         category = choosenQuestion.category;
         correct = choosenQuestion.correct;
-        timer = 12;
-        console.log(question);
-        console.log(value);
-        console.log(correct);
-        //console.log(responses);
+        timer = 15;
         view.displayQuestion();
         view.displayResponses();
         view.displayTimer();
@@ -35,7 +31,8 @@ let game = {
                     view.updateStatBar();
                     view.dialogCorrectNextQuestion();
                     game.timerStop();
-                } else if (correct !== userSelection) {
+                } 
+                if (correct !== userSelection) {
                     console.log(userSelection);
                     score -= value;
                     // counter++;
@@ -43,9 +40,9 @@ let game = {
                     game.timerStop();
                     view.dialogInCorrectNextQuestion();
                 }
-                if (counter === 3) {
-                    $('game-area').hide();
-                    game.timerStop();
+                if (counter == 11) {
+                    $('.ui-dialog').hide();
+                    $('.game-area').hide();
                     view.gameOverScreen();
                 }
         })
@@ -77,5 +74,15 @@ let game = {
         clearInterval(intervalId);
         clockRunning = false;
     },
+
+    clearArrays: () => {
+        questionsArray.push(...usedQuestions);
+        usedQuestions = [];
+    },
+
+    pushUsedQuestion: () => {
+        usedQuestions.push(choosenQuestion);
+        questionsArray.splice(questionsArray.indexOf(choosenQuestion) , 1);
+    }
 	
 };
