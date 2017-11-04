@@ -31,17 +31,22 @@ let game = {
                 if (correct === userSelection) {
                     console.log(userSelection);
                     score += value;
-                    counter++;
+                    // counter++;
                     view.updateStatBar();
                     view.dialogCorrectNextQuestion();
                     game.timerStop();
                 } else if (correct !== userSelection) {
                     console.log(userSelection);
                     score -= value;
-                    counter++
+                    // counter++;
                     view.updateStatBar();
                     game.timerStop();
                     view.dialogInCorrectNextQuestion();
+                }
+                if (counter === 3) {
+                    $('game-area').hide();
+                    game.timerStop();
+                    view.gameOverScreen();
                 }
         })
     },
@@ -64,7 +69,7 @@ let game = {
         score -= value;
         $('.userResponse').off();
         view.updateStatBar();
-        view.dialogInCorrectNextQuestion();
+        view.dialogTimesUpNextQuestion();
       }
     },
 

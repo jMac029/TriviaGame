@@ -4,7 +4,7 @@
 
 window.onload = () => {
 
-	game.nextQuestionInRound();
+	view.welcomeScreen();
 
 };
 
@@ -12,19 +12,29 @@ window.onload = () => {
 let view = {
 
 	welcomeScreen: () => {
+		$('.game-area').hide();
 		var welcomeHtml = 
 			"<h1>Are you up for the challenge?</h1>" +
-			"<input type='text' name='playerName' id='playerNameInput' placeholder='Player Name'>" +
-			"<button id='button-begin-game'>Begin</button>";
-		$('.game-area').html(welcomeHtml);
+			"<input type='text' name='playerName' id='playerNameInput' placeholder='PLAYER NAME'>" +
+			"<button id='button-begin-game'>BEGIN GAME</button>";
+		$('.welcome-screen').html(welcomeHtml);
+		$('#button-begin-game').click(function() {
+			playerName = $('#playerNameInput').val().trim();
+			if (playerName == "") {
+				playerName = "A PLAYER HAS NO NAME";
+			}
+			$('.welcome-screen').hide();
+			$('.game-area').show();
+			game.nextQuestionInRound();
+		});
 
 	},
 
 	updateStatBar: () => {
 		var statsHtml = 
 			"<ul>" +
-				"<li><p>Player: " + playerName + "</p></li>" +
-				"<li><p>Score: $" + score + "</p></li>" +
+				"<li><p>" + playerName + "</p></li>" +
+				"<li><p>$" + score + "</p></li>" +
 			"</ul>";
 		$('.stats-bar').html(statsHtml);
 		
@@ -48,12 +58,12 @@ let view = {
 
 	displayTimer: () => {
 		$('#timer').text(timer);
-		timer = 12;
+		timer = 16;
 
 	},
 
 	dialogCorrectNextQuestion: () => {
-		$('#dialog-correct-next-question').text("YOU ARE CORRECT AND EARNED $" + value + "!")
+		$('#dialog-correct-next-question').html("<p>" + playerName + "<br>YOU ARE CORRECT<br>EARNED<br>$" + value + "!</p>")
 		$( '#dialog-correct-next-question' ).dialog({
 		  classes: {"ui-dialog": "correct"},
 		  modal: true,
@@ -67,6 +77,7 @@ let view = {
 		        $( this ).dialog( "close" );
 		        view.clearGameArea();
 		        game.nextQuestionInRound();
+		        counter++;
 		      }
 		    }
 		  ]
@@ -74,7 +85,7 @@ let view = {
 	},
 
 	dialogInCorrectNextQuestion: () => {
-		$('#dialog-incorrect-next-question').text("YOU ARE INCORRECT AND LOSE $" + value + "!")
+		$('#dialog-incorrect-next-question').html("<p>" + playerName + "<br>YOU ARE INCORRECT<br>LOSE<br>$" + value + "!</p>")
 		$( '#dialog-incorrect-next-question' ).dialog({
 		  classes: {"ui-dialog": "incorrect"},
 		  modal: true,
@@ -88,14 +99,15 @@ let view = {
 		        $( this ).dialog( "close" );
 		        view.clearGameArea();
 		        game.nextQuestionInRound();
+		        counter++;
 		      }
 		    }
 		  ]
 		})
 	},
 
-	dialogInCorrectNextQuestion: () => {
-		$('#dialog-times-up-next-question').text("TIME IS UP! YOU LOSE $" + value + "!")
+	dialogTimesUpNextQuestion: () => {
+		$('#dialog-times-up-next-question').html("<p>" + playerName + "<br>TIME IS UP!<br>LOSE<br>$" + value + "!<p>")
 		$( '#dialog-times-up-next-question' ).dialog({
 		  classes: {"ui-dialog": "times-up"},
 		  modal: true,
@@ -109,6 +121,7 @@ let view = {
 		        $( this ).dialog( "close" );
 		        view.clearGameArea();
 		        game.nextQuestionInRound();
+		        counter++;
 		      }
 		    }
 		  ]
@@ -120,12 +133,30 @@ let view = {
 		$('#question').empty();
 		$('#question-value').empty();
 		$('.response-choices').empty();
+		$('#timer').empty();
 	},
 
 	alertNextQuestion: () => {
 		alert('Next Question');
 		view.clearGameArea();
 		game.nextQuestionInRound();
-	}
+	},
+
+	gameOverScreen: () => {
+		$('.game-area').hide();
+		var gameOverHtml = 
+			"<h1>You Completed the Game with a score of $" + score + "</h1>" +
+			"<h1>Would You like to play Again?</h1>"
+			"<button id='button-restart-game'>NEW GAME</button>";
+		$('.restart-screen').html(gameOverHtml);
+		$('#button-restart-game').click(function() {
+			$('welcome-screen').show();
+			view.welcomeScreen()
+			score = 0;
+			playerName = "player 1";
+
+		});
+
+	},
 
 };

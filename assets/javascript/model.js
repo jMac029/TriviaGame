@@ -25,7 +25,7 @@ var questionsArray = [
 				   "Who is Harrison Toad Mary Louie?"
 				   ],
 		correct: "What is Hypertext Markup Language?",
-		category: "HTML",
+		category: "HTML & CSS",
 		value: 100
 	},
 	{
@@ -52,5 +52,53 @@ var questionsArray = [
 		category: "HTML",
 		value: 300
 	},
+	{
+		question: "The father of theoretical computer science and artificial intelligence.",
+		responses: [
+					"Who is Bill Gates?",
+					"Who is Alan Turing?",
+					"Who is Mark Zuckerberg?",
+					"Who is Steve Wozniak?"
+					],
+		correct: "Who is Alan Turing?",
+		category: "Computer Science",
+		value: 400
+	},
+	{
+		question: "Published the first algorithm intended to be carried out by such a machine. Also called The First Computer Programmer.",
+		responses: [
+					"Who is Ada Lovelace?",
+					"Who is Steve Jobs?",
+					"Who is Noah Wylie?",
+					"Who is Mary Somerville?"
+					],
+		correct: "Who is Ada Lovelace?",
+		category: "Computer Science",
+		value: 500
+	},
+	{
+		question: "The very first website.",
+		responses: [
+					"What is apple.com?",
+					"What is www.com?",
+					"What is nasa.gov?",
+					"What is info.cern.ch?"
+					],
+		correct: "What is info.cern.ch?",
+		category: "History of the Web",
+		value: 500
+	},
+	{
+		question: "A style sheet language used for describing the presentation of a document written in a markup language..",
+		responses: [
+					"What is Extensible Markup Language(XML)?",
+					"What is Cascading Style Sheets(CSS)?",
+					"What is XML User Interface Language?",
+					"What is Syntactically Awesome Stylesheets(SASS)?"
+					],
+		correct: "What is Cascading Style Sheets(CSS)?",
+		category: "HTML & CSS",
+		value: 100
+	}
 
 ];
